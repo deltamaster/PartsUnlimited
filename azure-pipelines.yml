@@ -32,3 +32,10 @@ steps:
   inputs:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
+- task: AzureWebApp@1
+  inputs:
+    azureSubscription: 'PCTS Partner Sandbox(25f44521-14d3-44a1-a894-3da84e4528b8)'
+    appType: 'webApp'
+    appName: 'puldemohansen'
+    package: '$(System.DefaultWorkingDirectory)/**/*.zip'
+    deploymentMethod: 'auto'
